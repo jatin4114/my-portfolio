@@ -1,0 +1,13 @@
+// HomePage.tsx
+import React from "react";
+import HeroSection from '../components/HeroSection';
+
+const Projects: React.FC = () => {
+  return (
+    <div className="home-page">
+       {/* Homepage specific section */}
+    </div>
+  );
+};
+
+export default Projects;

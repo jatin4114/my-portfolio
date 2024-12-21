@@ -1,0 +1,148 @@
+/* Sidebar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #db5454;
+    color: #ffffff;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  /* Sidebar Width */
+  .navbar.expanded {
+    width: 250px;
+  }
+  
+  .navbar.collapsed {
+    width: 90px;
+    background-color: #1c2c3e;
+  }
+  
+  /* Top Section with Logo */
+  .navbar .top {
+    padding: 20px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar .navbar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    margin: 0 auto;
+  }
+  
+  .navbar .menu-button {
+    position: absolute;
+    top: 70px; /* Position below the logo */
+    left: 15.9px;
+    padding-top: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  
+  .navbar.collapsed .menu-button {
+    margin-left: 7.7px; /* Match spacing for consistency */
+    font-size: 30px;
+    justify-content: center;
+  }
+  
+  .navbar.collapsed .nav-item {
+    justify-content: center; /* Center the icons horizontally */
+    text-align: center;
+    transform: none; /* Remove horizontal translation */
+    padding: 25px; 
+  }
+  
+  /* Navigation Links */
+  .navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .navbar .nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Needed for positioning the tooltip */
+  }
+  
+  .navbar .nav-item:hover {
+    background-color: #3d1495;
+    color: #ffffff;
+  }
+  
+  /* Active/Selected Navigation Item */
+  .navbar .nav-item.active {
+    background-color: #e9d8c9;  /* Change this to the color you prefer */
+    color: #fff;  /* Text color for active state */
+  }
+  
+  .navbar .nav-item.active .icon {
+    color: #000000;  /* Ensure icons match the active color */
+  }
+  
+  .navbar .nav-item.active .nav-text {
+    color: #000000;  /* Ensure text matches the active color */
+  }
+  
+  /* Icons */
+  .navbar .icon {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+  
+  /* Nav Text */
+  .navbar .nav-text {
+    font-size: 17px; /* Start with no visible text */
+    transition: font-size 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .navbar.collapsed .icon {
+    margin-right: 0; /* Remove space for text */
+  }
+  
+  /* Hide Nav Text When Collapsed */
+  .navbar.collapsed .nav-text {
+    opacity: 0; /* Hide the text */
+    font-size: 0; /* Shrink the text size */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Tooltip Style */
+  .navbar .tooltip {
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    position: absolute;
+    background-color: #5411e4;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    bottom: 100%; /* Position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1001;
+  }
+  
+  .navbar.collapsed .nav-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1; /* Show tooltip */
+  }

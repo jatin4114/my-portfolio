@@ -1,0 +1,5 @@
+declare namespace JSX{
+    interface IntrinsictElements {
+        "box-icon": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>,HTMLElement>
+    }
+}
